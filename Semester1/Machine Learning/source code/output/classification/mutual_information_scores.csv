@@ -1,0 +1,15 @@
+Feature,Mutual Information
+Session_Duration (hours),0.6554982087906807
+Workout_Frequency (days per week),0.5902500250076557
+Fat_Percentage,0.4812395186860421
+Calories_Burned,0.38285765866429977
+Water_Intake (liters),0.3483491665128633
+Weight (kg),0.24823291031256467
+BMI,0.06897850572365671
+Gender,0.018193818719133503
+Workout_Type,0.012729033830432002
+Resting_BPM,0.007177345764331822
+Avg_BPM,0.0
+Max_BPM,0.0
+Height (m),0.0
+Age,0.0
