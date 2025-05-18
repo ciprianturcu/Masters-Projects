@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voronoi Diagram Showcase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background: #4CAF50;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    section {
+      margin: 20px auto;
+      max-width: 800px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .caption {
+      text-align: center;
+      font-style: italic;
+      margin-top: 10px;
+    }
+    .additional-plot {
+      margin-top: 30px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Voronoi Diagram and More</h1>
+  </header>
+  <section>
+    <h2>Voronoi Diagram</h2>
+    <p>This diagram represents the Voronoi tessellation calculated from your dataset. Each cell corresponds to a region closest to one of the seed points.</p>
+    <img src="voronoi.png" alt="Voronoi Diagram">
+    <div class="caption">Figure 1: Voronoi Diagram generated from the dataset.</div>
+    
+    <div class="additional-plot">
+      <h2>Additional Plot: Sample Data Distribution</h2>
+      <p>This section can be used to display another plot or further explanations about the analysis. Replace the image below with your own plot if desired.</p>
+      <img src="additional_plot.png" alt="Additional Plot">
+      <div class="caption">Figure 2: An example additional plot.</div>
+    </div>
+    
+    <h2>About the Analysis</h2>
+    <p>The Voronoi diagram is a powerful tool for visualizing spatial structures. In this case, each region represents areas of influence from each of the seed points in the dataset. You can further customize the diagram and add more interactive elements as needed.</p>
+  </section>
+  
+  <footer style="text-align: center; margin-top: 20px;">
+    <p>Created with care using HTML, CSS, and Python plotting libraries.</p>
+  </footer>
+</body>
+</html>
