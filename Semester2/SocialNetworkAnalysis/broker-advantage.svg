@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 850 650" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="850" height="650" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#333333">Broker's Advantages</text>
+  
+  <!-- Connection Lines (positioned before circles for proper layering) -->
+  <line x1="400" y1="300" x2="200" y2="400" stroke="#6aa84f" stroke-width="6"/>
+  <line x1="400" y1="300" x2="400" y2="500" stroke="#9900ff" stroke-width="6"/>
+  <line x1="400" y1="300" x2="600" y2="400" stroke="#cc0000" stroke-width="6"/>
+  <line x1="400" y1="300" x2="600" y2="200" stroke="#ff9900" stroke-width="6"/>
+  <line x1="400" y1="300" x2="200" y2="200" stroke="#3d85c6" stroke-width="6"/>
+  
+  <!-- Central Node -->
+  <circle cx="400" cy="300" r="70" fill="#3d85c6" stroke="#2c5b8e" stroke-width="4"/>
+  <text x="400" y="290" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#ffffff">Broker</text>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff">Hub Position</text>
+  
+  <!-- Information Advantage Node -->
+  <circle cx="200" cy="400" r="60" fill="#6aa84f" stroke="#38761d" stroke-width="3"/>
+  <text x="200" y="390" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Information</text>
+  <text x="200" y="415" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff">Advantage</text>
+  
+  <!-- Control Benefit Node -->
+  <circle cx="400" cy="500" r="60" fill="#9900ff" stroke="#7030a0" stroke-width="3"/>
+  <text x="400" y="490" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Control</text>
+  <text x="400" y="515" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff">Benefit</text>
+  
+  <!-- Visibility Advantage Node -->
+  <circle cx="600" cy="400" r="60" fill="#cc0000" stroke="#990000" stroke-width="3"/>
+  <text x="600" y="390" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Visibility</text>
+  <text x="600" y="415" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff">Advantage</text>
+  
+  <!-- Market Position Node -->
+  <circle cx="600" cy="200" r="60" fill="#ff9900" stroke="#b45f06" stroke-width="3"/>
+  <text x="600" y="190" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Market</text>
+  <text x="600" y="215" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff">Position</text>
+  
+  <!-- Network Centrality Node -->
+  <circle cx="200" cy="200" r="60" fill="#3d85c6" stroke="#0b5394" stroke-width="3"/>
+  <text x="200" y="190" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Network</text>
+  <text x="200" y="215" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff">Centrality</text>
+  
+  <!-- Information Advantage Details (repositioned) -->
+  <text x="50" y="490" font-family="Arial, sans-serif" font-size="14" fill="#6aa84f">• Access to confidential data</text>
+  <text x="50" y="515" font-family="Arial, sans-serif" font-size="14" fill="#6aa84f">• Knowledge of client needs</text>
+  <text x="50" y="540" font-family="Arial, sans-serif" font-size="14" fill="#6aa84f">• Market intelligence</text>
+  
+  <!-- Control Benefit Details (repositioned) -->
+  <text x="400" y="580" font-family="Arial, sans-serif" font-size="14" fill="#9900ff">• Gateway positioning</text>
+  <text x="400" y="605" font-family="Arial, sans-serif" font-size="14" fill="#9900ff">• Transaction oversight</text>
+  
+  <!-- Visibility Advantage Details (repositioned) -->
+  <text x="670" y="460" font-family="Arial, sans-serif" font-size="14" fill="#cc0000">• Cross-market visibility</text>
+  <text x="670" y="485" font-family="Arial, sans-serif" font-size="14" fill="#cc0000">• Trend recognition</text>
+  
+  <!-- Market Position Details (repositioned) -->
+  <text x="670" y="140" font-family="Arial, sans-serif" font-size="14" fill="#ff9900">• Pricing power</text>
+  <text x="670" y="165" font-family="Arial, sans-serif" font-size="14" fill="#ff9900">• Strategic partnerships</text>
+  
+  <!-- Network Centrality Details (repositioned) -->
+  <text x="50" y="120" font-family="Arial, sans-serif" font-size="14" fill="#3d85c6">• Connection to key players</text>
+  <text x="50" y="145" font-family="Arial, sans-serif" font-size="14" fill="#3d85c6">• Resource allocation</text>
+</svg>
