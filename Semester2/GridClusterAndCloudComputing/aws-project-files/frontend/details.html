@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Journal Entry Details</title>
+  <style>
+    /* Global Reset + Typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    /* Content Styles */
+    #content {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    #content p {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+    #content img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 4px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Button */
+    .back-button {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .back-button button {
+      background-color: #718096;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .back-button button:hover {
+      background-color: #4a5568;
+    }
+
+    /* Error */
+    #error {
+      color: #e53e3e;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Entry Details</h1>
+    <div id="content">Loading entry…</div>
+    <div id="error"></div>
+    <div class="back-button">
+      <a href="index.html"><button>← Back to Home</button></a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    async function loadEntry() {
+      const contentDiv = document.getElementById('content');
+      const errorDiv   = document.getElementById('error');
+      const entryId    = getQueryParam('id');
+
+      contentDiv.textContent = '';
+      errorDiv.textContent   = '';
+
+      if (!entryId) {
+        errorDiv.textContent = 'No entry ID specified.';
+        return;
+      }
+
+      try {
+        const entry = await fetchEntryById(entryId);
+        let html = '';
+        html += `<p><strong>Text:</strong></p>
+                 <p>${entry.text.replace(/\n/g, '<br>')}</p>`;
+
+        if (entry.file && entry.file.download_url) {
+          html += `
+            <p><strong>Photo:</strong></p>
+            <img src="${entry.file.download_url}" alt="Entry Photo" />
+          `;
+        }
+
+        contentDiv.innerHTML = html;
+      } catch (err) {
+        errorDiv.textContent = `Unable to load entry: ${err}`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadEntry);
+  </script>
+</body>
+</html>

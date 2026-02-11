@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Journal Entry</title>
+  <style>
+    /* Global Reset + Typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+      padding-top: 1rem;
+      color: #444;
+    }
+
+    /* Form Elements */
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+    label {
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: #555;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    input[type="file"] {
+      margin-top: 0.5rem;
+    }
+
+    /* Submit Button */
+    button {
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.2rem;
+      background-color: #48bb78;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      align-self: flex-start;
+    }
+    button:hover {
+      background-color: #38a169;
+    }
+
+    /* Status & Error */
+    #status {
+      margin-top: 1rem;
+      color: #2f855a;
+      text-align: center;
+    }
+    #error {
+      margin-top: 1rem;
+      color: #e53e3e;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Add Journal Entry</h1>
+    <form id="entry-form">
+      <label for="text">Your Thoughts:</label>
+      <textarea id="text" name="text" placeholder="Write your journal entry..." required></textarea>
+
+      <label for="file">Photo (optional):</label>
+      <input type="file" id="file" name="file" accept="image/*" />
+
+      <button type="submit">Submit Entry</button>
+    </form>
+    <div id="status"></div>
+    <div id="error"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    const form = document.getElementById('entry-form');
+    const statusDiv = document.getElementById('status');
+    const errorDiv = document.getElementById('error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusDiv.textContent = '';
+      errorDiv.textContent = '';
+
+      const text = document.getElementById('text').value.trim();
+      const fileInput = document.getElementById('file');
+      // If no file chosen, fileInput.files.length === 0 → file = null
+      const file = (fileInput.files && fileInput.files.length > 0)
+        ? fileInput.files[0]
+        : null;
+
+      if (!text) {
+        errorDiv.textContent = 'Text is required.';
+        return;
+      }
+
+      try {
+        statusDiv.textContent = 'Uploading…';
+        const entryId = await createEntry(text, file);
+        statusDiv.textContent = `Saved (ID: ${entryId}). Redirecting…`;
+        window.location.href = `details.html?id=${entryId}`;
+      } catch (err) {
+        errorDiv.textContent = `Error: ${err}`;
+        statusDiv.textContent = '';
+      }
+    });
+  </script>
+</body>
+</html>
